@@ -1,4 +1,4 @@
-﻿namespace ExamSchedulingSystem
+﻿namespace ExamSchedulingSystem.db
 {
     public class Exam
     {

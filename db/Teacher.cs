@@ -1,4 +1,4 @@
-﻿namespace ExamSchedulingSystem
+﻿namespace ExamSchedulingSystem.db
 {
 
     public enum Campus
@@ -10,12 +10,12 @@
 
     public class Teacher
     {
-        public Guid id { get; set; }
+        private Guid id { get; set; }
         public Guid DeptId { get; set; }//工作单位
-        public string Gender { get; set; }
+        public int Gender { get; set; }
         public Campus ExamCampus { get; set; }//监考校区
         public bool ParticipatedLastYear { get; set; }
-        public int ExamId { get; set; }
+        public Guid ExamId { get; set; }
     }
 
 }

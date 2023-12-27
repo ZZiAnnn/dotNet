@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExamSchedulingSystem.Controllers
 {
-    [Route("/api/user/{action}")]
     public class SchedulingController : Controller
     {
         private SchedulingService schedulingService;
@@ -12,11 +11,15 @@ namespace ExamSchedulingSystem.Controllers
             this.schedulingService = schedulingService;
         }
 
-        [HttpGet]
-        public ActionResult SchedulingExam()
+        [HttpPost("/scheduling/{id}")]
+        public ActionResult SchedulingExam(Guid id)
         {
-            schedulingService.schedulingExam(examId);
-            return Ok(new { success="success", msg="msg", data = "1" });
+            var ret=this.schedulingService.schedulingExam(id);
+            return Ok(new { 
+                success="success",
+                msg="Ok", 
+                data=ret
+            });
         }
     }
 }
