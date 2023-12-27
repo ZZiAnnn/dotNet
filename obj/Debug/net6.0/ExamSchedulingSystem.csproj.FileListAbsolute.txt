@@ -1,0 +1,64 @@
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\appsettings.Development.json
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\appsettings.json
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.exe
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.deps.json
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.runtimeconfig.json
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.dll
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.pdb
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\VS Project\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.AssemblyReference.cache
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.AssemblyInfoInputs.cache
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.AssemblyInfo.cs
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.CoreCompileInputs.cache
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.MvcApplicationPartsAssemblyInfo.cs
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.MvcApplicationPartsAssemblyInfo.cache
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.ExamSchedulingSystem.Microsoft.AspNetCore.StaticWebAssets.props
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.build.ExamSchedulingSystem.props
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ExamSchedulingSystem.props
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ExamSchedulingSystem.props
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.pack.json
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.build.json
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.development.json
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\scopedcss\bundle\ExamSchedulingSystem.styles.css
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.CopyComplete
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.dll
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\refint\ExamSchedulingSystem.dll
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.pdb
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.genruntimeconfig.cache
+E:\VS Project\ExamSchedulingSystem\obj\Debug\net6.0\ref\ExamSchedulingSystem.dll
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\appsettings.Development.json
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\appsettings.json
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.exe
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.deps.json
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.runtimeconfig.json
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.dll
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\ExamSchedulingSystem.pdb
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Desktop\ExamSchedulingSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.AssemblyReference.cache
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.AssemblyInfoInputs.cache
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.AssemblyInfo.cs
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.CoreCompileInputs.cache
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.MvcApplicationPartsAssemblyInfo.cs
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.MvcApplicationPartsAssemblyInfo.cache
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.ExamSchedulingSystem.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.build.ExamSchedulingSystem.props
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ExamSchedulingSystem.props
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ExamSchedulingSystem.props
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.build.json
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\staticwebassets.development.json
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\scopedcss\bundle\ExamSchedulingSystem.styles.css
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.csproj.CopyComplete
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.dll
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\refint\ExamSchedulingSystem.dll
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.pdb
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ExamSchedulingSystem.genruntimeconfig.cache
+D:\Desktop\ExamSchedulingSystem\obj\Debug\net6.0\ref\ExamSchedulingSystem.dll
