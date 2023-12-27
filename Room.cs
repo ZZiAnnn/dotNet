@@ -1,13 +1,11 @@
 namespace ExamSchedulingSystem
 {
-    public class WeatherForecast
+    public class Room
     {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
-        public string? Summary { get; set; }
+        Guid id { get; set; }
+        public string? name { get; set; }
+        public int? campus { get; set; }//校区
+        public int? buildingNo { get; set; }//楼号
+        public int? roomNo { get; set; }//房间号
     }
 }
