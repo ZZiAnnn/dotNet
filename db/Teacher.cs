@@ -16,6 +16,11 @@
         public Campus ExamCampus { get; set; }//监考校区
         public bool ParticipatedLastYear { get; set; }
         public Guid ExamId { get; set; }
+
+        public Guid getid()
+        {
+            return id;
+        }
     }
 
 }

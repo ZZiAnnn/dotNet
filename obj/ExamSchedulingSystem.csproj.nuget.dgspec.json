@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\ExamSchedulingSystem\\ExamSchedulingSystem.csproj": {}
+    "E:\\VS Project\\ZZiAnnn\\dotNet\\ExamSchedulingSystem.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\ExamSchedulingSystem\\ExamSchedulingSystem.csproj": {
+    "E:\\VS Project\\ZZiAnnn\\dotNet\\ExamSchedulingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\ExamSchedulingSystem\\ExamSchedulingSystem.csproj",
+        "projectUniqueName": "E:\\VS Project\\ZZiAnnn\\dotNet\\ExamSchedulingSystem.csproj",
         "projectName": "ExamSchedulingSystem",
-        "projectPath": "D:\\Desktop\\ExamSchedulingSystem\\ExamSchedulingSystem.csproj",
-        "packagesPath": "C:\\Users\\26401\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\ExamSchedulingSystem\\obj\\",
+        "projectPath": "E:\\VS Project\\ZZiAnnn\\dotNet\\ExamSchedulingSystem.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\VS Project\\ZZiAnnn\\dotNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\26401\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

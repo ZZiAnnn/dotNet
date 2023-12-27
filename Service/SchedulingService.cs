@@ -23,40 +23,38 @@ namespace ExamSchedulingSystem.Service
             return schedule(id, teachers, rooms);
         }
 
-        public List<ScheResult> schedule(Guid ExamId, List<Teacher> teachers, List<Room> rooms)
+        public List<ScheResult> schedule(Guid ExamId, List<Teacher> teachers,List<Room> rooms)
         {
             List<ScheResult> scheResults = new List<ScheResult>();
 
             // 每个校区分开分配
-            foreach (Campus campus in Enum.GetValues(typeof(Campus)))
+            foreach(Campus campus in Enum.GetValues(typeof(Campus)))
             {
                 // 1 获取该校区的老师和考场
                 var campusTeachers = teachers.Where(t => t.ExamCampus == campus).ToList();
                 var campusRooms = rooms.Where(r => r.campus == campus).ToList();
 
-                string res = canSchedule(campusTeachers, campusRooms);
+                string res = canSchedule(campusTeachers,campusRooms);
 
-                if (res != "")
-                {
+                if(res!=""){
                     scheResults.Clear();
-                    scheResults.Add(new ScheResult
-                    {
+                    scheResults.Add(new ScheResult{
                         AllocationStatus = Result.无法分配,
                         AllocationRuleDescription = campus.ToString() + "无法分配, " + res
                     });
                     return scheResults;
                 }
-
+                
                 // 2 随机打乱考场
                 Random random = new Random();
                 campusRooms = campusRooms.OrderBy(r => random.Next()).ToList();
 
                 // 再遍历一次考场列表、如果前后考场考室连续且前考场与后考场的下一考场不连续、交换前后的考场
-                for (int i = 0; i < campusRooms.Count - 1; i++)
+                for(int i = 0; i < campusRooms.Count - 1; i++)
                 {
-                    if (campusRooms[i].buildingNo == campusRooms[i + 1].buildingNo && campusRooms[i].roomNo + 1 == campusRooms[i + 1].roomNo)
+                    if(campusRooms[i].buildingNo == campusRooms[i + 1].buildingNo && campusRooms[i].roomNo + 1 == campusRooms[i + 1].roomNo)
                     {
-                        if (i + 2 < campusRooms.Count && campusRooms[i + 1].buildingNo != campusRooms[i + 2].buildingNo)
+                        if(i + 2 < campusRooms.Count && campusRooms[i + 1].buildingNo != campusRooms[i + 2].buildingNo)
                         {
                             var temp = campusRooms[i];
                             campusRooms[i] = campusRooms[i + 1];
@@ -66,37 +64,36 @@ namespace ExamSchedulingSystem.Service
                 }
 
                 // 3 数据准备
-                int lastGender = 0;
                 int alreadyAllocatedTeacherCount = 0;
+                int lastGender = 0;
 
                 // 把老师分成新老两组老师
                 List<Teacher> newTeachers = campusTeachers.Where(t => t.ParticipatedLastYear == false).ToList();
                 List<Teacher> oldTeachers = campusTeachers.Where(t => t.ParticipatedLastYear == true).ToList();
-
+                
                 Dictionary<Guid, int> newDeptTeacherCount = new Dictionary<Guid, int>();
                 Dictionary<Guid, int> oldDeptTeacherCount = new Dictionary<Guid, int>();
                 // 分别记录两组老师的不同部门的剩余老师数量
-                foreach (Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                foreach(Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                 {
                     newDeptTeacherCount.Add(deptId, newTeachers.Where(t => t.DeptId == deptId).Count());
                     oldDeptTeacherCount.Add(deptId, oldTeachers.Where(t => t.DeptId == deptId).Count());
                 }
 
                 // 4 依次为考场分配老师
-                while (alreadyAllocatedTeacherCount != rooms.Count())
-                {
+                while(alreadyAllocatedTeacherCount != campusRooms.Count()){
 
                     // 4.1 找老人最多且还有新人在其他部门的部门
                     Guid maxOldDeptId = Guid.Empty;
                     int maxOldDeptTeacherCount = 0;
                     int solutionType = 0;
-                    foreach (Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                    foreach(Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                     {
-                        if (oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount)
+                        if(oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount)
                         {
-                            foreach (Guid deptId2 in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                            foreach(Guid deptId2 in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                             {
-                                if (newDeptTeacherCount[deptId2] > 0 && deptId2 != deptId)
+                                if(newDeptTeacherCount[deptId2] > 0 && deptId2 != deptId)
                                 {
                                     maxOldDeptId = deptId;
                                     maxOldDeptTeacherCount = oldDeptTeacherCount[deptId];
@@ -107,16 +104,15 @@ namespace ExamSchedulingSystem.Service
                     }
 
                     // 4.2 次优解, 选老人最多且还有老人在其他部门的部门
-                    if (maxOldDeptId == Guid.Empty)
-                    {
+                    if(maxOldDeptId == Guid.Empty){
                         solutionType = 1;
-                        foreach (Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                        foreach(Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                         {
-                            if (oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount)
+                            if(oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount)
                             {
-                                foreach (Guid deptId2 in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                                foreach(Guid deptId2 in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                                 {
-                                    if (oldDeptTeacherCount[deptId2] > 0 && deptId2 != deptId)
+                                    if(oldDeptTeacherCount[deptId2] > 0 && deptId2 != deptId)
                                     {
                                         maxOldDeptId = deptId;
                                         maxOldDeptTeacherCount = oldDeptTeacherCount[deptId];
@@ -128,11 +124,9 @@ namespace ExamSchedulingSystem.Service
                     }
 
                     // 4.3 无解
-                    if (maxOldDeptId == Guid.Empty)
-                    {
+                    if(maxOldDeptId == Guid.Empty){
                         scheResults.Clear();
-                        scheResults.Add(new ScheResult
-                        {
+                        scheResults.Add(new ScheResult{
                             AllocationStatus = Result.无法分配,
                             AllocationRuleDescription = campus.ToString() + "无法分配, " + "无法找到合适的老师"
                         });
@@ -149,27 +143,25 @@ namespace ExamSchedulingSystem.Service
 
                     // 4.1.1 & 4.2.1从该部门的老师中尽量找到一个性别和lastGender不同的老师
                     Teacher select1 = maxOldDeptTeachers[0];
-                    foreach (Teacher t in maxOldDeptTeachers)
-                    {
-                        if (t.Gender != lastGender)
-                        {
+                    foreach(Teacher t in maxOldDeptTeachers){
+                        if(t.Gender != lastGender){
                             select1 = t;
                             break;
                         }
                     }
                     scheResult.Invigilator1Id = select1.getid();
+                    lastGender = select1.Gender;
                     // 移出 oldDeptTeacherCount 和 oldTeachers
                     oldDeptTeacherCount[maxOldDeptId]--;
                     oldTeachers.Remove(select1);
 
-                    if (solutionType == 0)
-                    {
+                    if(solutionType == 0){
                         // 4.1.2 找新人人数最多的不同部门
                         Guid maxNewDeptId = Guid.Empty;
                         int maxNewDeptTeacherCount = 0;
-                        foreach (Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                        foreach(Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                         {
-                            if (newDeptTeacherCount[deptId] > maxNewDeptTeacherCount && deptId != maxOldDeptId)
+                            if(newDeptTeacherCount[deptId] > maxNewDeptTeacherCount && deptId != maxOldDeptId)
                             {
                                 maxNewDeptId = deptId;
                                 maxNewDeptTeacherCount = newDeptTeacherCount[deptId];
@@ -181,10 +173,8 @@ namespace ExamSchedulingSystem.Service
 
                         // 从该部门的老师中尽量找到一个性别和select1不同的老师
                         Teacher select2 = maxNewDeptTeachers[0];
-                        foreach (Teacher t in maxNewDeptTeachers)
-                        {
-                            if (t.Gender != select1.Gender)
-                            {
+                        foreach(Teacher t in maxNewDeptTeachers){
+                            if(t.Gender != select1.Gender){
                                 select2 = t;
                                 break;
                             }
@@ -194,15 +184,13 @@ namespace ExamSchedulingSystem.Service
                         newDeptTeacherCount[maxNewDeptId]--;
                         newTeachers.Remove(select2);
 
-                    }
-                    else
-                    {
+                    }else{
                         // 4.2.2找老人人数最多的不同部门
                         Guid maxOldDeptId2 = Guid.Empty;
                         int maxOldDeptTeacherCount2 = 0;
-                        foreach (Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
+                        foreach(Guid deptId in campusTeachers.Select(t => t.DeptId).Distinct().ToList())
                         {
-                            if (oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount2 && deptId != maxOldDeptId)
+                            if(oldDeptTeacherCount[deptId] > maxOldDeptTeacherCount2 && deptId != maxOldDeptId)
                             {
                                 maxOldDeptId2 = deptId;
                                 maxOldDeptTeacherCount2 = oldDeptTeacherCount[deptId];
@@ -214,10 +202,8 @@ namespace ExamSchedulingSystem.Service
 
                         // 从该部门的老师中尽量找到一个性别和select1不同的老师
                         Teacher select2 = maxOldDeptTeachers2[0];
-                        foreach (Teacher t in maxOldDeptTeachers2)
-                        {
-                            if (t.Gender != select1.Gender)
-                            {
+                        foreach(Teacher t in maxOldDeptTeachers2){
+                            if(t.Gender != select1.Gender){
                                 select2 = t;
                                 break;
                             }
@@ -228,7 +214,7 @@ namespace ExamSchedulingSystem.Service
                         oldTeachers.Remove(select2);
 
                     }
-
+                    
                     // 4.1.3 & 4.2.3添加到结果
                     scheResults.Add(scheResult);
 
